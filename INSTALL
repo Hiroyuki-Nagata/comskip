@@ -3,7 +3,7 @@ comskip のインストール方法(仮)
 (comskip Installation Instructions (temporary))
 *********************************************
 
-Copyright (C) 2013 Hiroyuki Nagata
+Copyright (C) 2014 Hiroyuki Nagata
 
    Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
@@ -16,14 +16,16 @@ without warranty of any kind.
 
  $ git clone https://github.com/Hiroyuki-Nagata/comskip.git
  $ cd path/to/comskip/
+ $ git submodule init
+ $ git submodule update
  $ ./bootstrap
 
- # ffmpegのディレクトリに移動してビルドする
+ # Move ffmpeg directory and build
  $ cd ffmpeg
  $ ./configure --enable-gpl --enable-version3 --disable-stripping --enable-libx264 --enable-shared
  $ make && make install
 
- # comskip本体をビルドする
+ # Build comskip
  $ cd ../
  $ ./configure
  $ make

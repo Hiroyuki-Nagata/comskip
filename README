@@ -35,7 +35,3 @@ cd ffmpeg
 git checkout -b comskip n1.2.3
 patch -p1 < ../ffmpeg-unicode.patch
 ./configure --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --enable-gpl --enable-version3 --disable-stripping --enable-libx264 --disable-shared --enable-static
-
-== argtable2 ==
-
-./configure --prefix=/usr --sysconfdir=/etc --build=x86_64-unknown-linux-gnu --host=i686-w64-mingw32 --enable-static --disable-shared

@@ -80,12 +80,6 @@ if test $has_pthread = 0; then
   AC_MSG_ERROR("ERROR: cannot find pthread.")
 fi
 
-## Checks for argtable2
-#AC_CHECK_LIB(argtable2,arg_print_option,LIBS="-largtable2 $LIBS" has_argtable2=1,has_argtable2=0)
-#if test $has_argtable2 = 0; then
-#  AC_MSG_ERROR("ERROR: cannot find argtable2.")
-#fi
-
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h inttypes.h locale.h memory.h stdlib.h string.h sys/timeb.h])
 
