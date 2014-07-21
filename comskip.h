@@ -1,13 +1,13 @@
 #ifndef COMSKIP
 #define COMSKIP
 #define COMSKIPVERSION "0.81"
-#define SUBVERSION "056"
+#define SUBVERSION "056-TYA Edition"
 #endif
 
 #define _UNICODE
 
 #ifdef HAVE_CONFIG_H
-   #include "config.h"
+#include "config.h"
 #endif /** autoconf generated config.h */
 
 #define bool			int
@@ -16,8 +16,8 @@
 
 // define Sleep
 #ifndef _WIN32
-   #define Sleep(x)      sleep(x)
-   #define _getcwd(x, y) getcwd(x, y)
+#define Sleep(x)      sleep(x)
+#define _getcwd(x, y) getcwd(x, y)
 #endif
 
 typedef signed char int8_t;
@@ -29,18 +29,18 @@ typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
 
 #ifdef __GNUC__
-   /* gcc */
-   typedef long long __int64;
+/* gcc */
+typedef long long __int64;
 #else
-   /* msvc or clang */
-   typedef signed __int64 int64_t;
-   typedef unsigned __int64 uint64_t;
+/* msvc or clang */
+typedef signed __int64 int64_t;
+typedef unsigned __int64 uint64_t;
 #endif
 
 #ifndef _WIN32
-   #if defined(_WIN64)
-    typedef __int64 LONG_PTR; 
-   #else
-    typedef long LONG_PTR;
-   #endif
+#if defined(_WIN64)
+typedef __int64 LONG_PTR; 
+#else
+typedef long LONG_PTR;
+#endif
 #endif

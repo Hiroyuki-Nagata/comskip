@@ -35,7 +35,7 @@ esac
 # Checks for HostCPU
 AS_CASE([$host_cpu],
   [i?86],   [ARCH=i386],
-  [x86_64], [ARCH=x86_64],
+  [x86_64|amd64], [ARCH=x86_64],
   [AC_MSG_ERROR("No assembler code for CPU $host_cpu")]
 )
 AC_DEFINE([ARCH], [ARCH], [CPU is $host_cpu])
@@ -65,8 +65,8 @@ AC_DEFINE([DONATORS], [1], [Description of DONATORS])
 #
 
 # Search PATH
-CFLAGS="$CFLAGS -I/usr/local/include"
-LDFLAGS="$LDFLAGS -L/usr/local/lib"
+CFLAGS="$CFLAGS -I/usr/local/include -I./usr/local/include"
+LDFLAGS="$LDFLAGS -L/usr/local/lib -L./usr/local/lib"
 
 # Checks for libm
 AC_CHECK_LIB(m,exp,LIBS="-lm $LIBS" has_m=1,has_m=0)
@@ -80,11 +80,11 @@ if test $has_pthread = 0; then
   AC_MSG_ERROR("ERROR: cannot find pthread.")
 fi
 
-# Checks for argtable2
-AC_CHECK_LIB(argtable2,arg_print_option,LIBS="-largtable2 $LIBS" has_argtable2=1,has_argtable2=0)
-if test $has_argtable2 = 0; then
-  AC_MSG_ERROR("ERROR: cannot find argtable2.")
-fi
+## Checks for argtable2
+#AC_CHECK_LIB(argtable2,arg_print_option,LIBS="-largtable2 $LIBS" has_argtable2=1,has_argtable2=0)
+#if test $has_argtable2 = 0; then
+#  AC_MSG_ERROR("ERROR: cannot find argtable2.")
+#fi
 
 # Checks for header files.
 AC_CHECK_HEADERS([fcntl.h inttypes.h locale.h memory.h stdlib.h string.h sys/timeb.h])
