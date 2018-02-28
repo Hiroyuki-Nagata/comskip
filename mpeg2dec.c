@@ -1563,8 +1563,12 @@ int main (int argc, char ** argv)
         }
         strncpy(HomeDir, ptr, len);
 
-        len = (size_t)max(0,strrchr(HomeDir,'\\') - HomeDir);
-        if (len==0)
+        char* HomeDirSeparator = strrchr(HomeDir, '/');
+        if (HomeDirSeparator == NULL)
+        {
+            HomeDirSeparator = strrchr(HomeDir, '\\');
+        }
+        if (HomeDirSeparator == NULL)
         {
             HomeDir[0] = '.';
             HomeDir[1] = '\0';
